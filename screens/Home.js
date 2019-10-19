@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { Block, theme } from 'galio-framework';
+import { Block, theme, Text } from 'galio-framework';
 
 import { Card } from '../components';
+import Gcard from '../components/graphcard'
 import articles from '../constants/articles';
 const { width } = Dimensions.get('screen');
 
@@ -10,16 +11,19 @@ class Home extends React.Component {
   renderArticles = () => {
     return (
       <ScrollView
-        showsVerticalScrollIndicator={false}
+        // showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
-          <Card item={articles[0]} horizontal  />
-          <Block flex row>
-            <Card item={articles[1]} style={{ marginRight: theme.SIZES.BASE }} />
-            <Card item={articles[2]} />
-          </Block>
-          <Card item={articles[3]} horizontal />
-          <Card item={articles[4]} full />
+          <Gcard item={articles[0]} full  />
+          {/* <Block flex row>
+            <Card item={articles[0]} style={{ marginRight: theme.SIZES.BASE }} />
+            <Card item={articles[0]} />
+          </Block> */}
+          <Card item={articles[0]} full />
+          <Card item={articles[0]} full />
+          <Card item={articles[0]} full />
+
+          
         </Block>
       </ScrollView>
     )
