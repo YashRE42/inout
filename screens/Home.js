@@ -22,9 +22,9 @@ class Home extends React.Component {
         // showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.articles}>
         <Block flex>
-          <MapCard item={articles[0]} full />
-
-          <Gcard item={articles[0]} full  />
+          <MapCard  full />
+          <Card  full/>
+          <Gcard  full  />
           {/* <Block flex row>
             <Card item={articles[0]} style={{ marginRight: theme.SIZES.BASE }} />
             <Card item={articles[0]} />

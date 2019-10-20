@@ -70,10 +70,10 @@ class Pulse extends React.Component {
             <Block row={horizontal} card flex style={cardContainer}>
                 <Icon name="heart-outlined" family="Entypo" color={theme.COLORS.RED} size={50} />
 
-                <Text h3 >
+                <Text h4 bold >
                     {/* {item.cta} */}
                 
-                    60 bpm
+                    You look healthy :)
                     </Text>
                 {/* <TouchableWithoutFeedback onPress={() => navigation.navigate('')}> */}
 

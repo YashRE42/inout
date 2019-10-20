@@ -3,6 +3,7 @@ import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import MapView from 'react-native-maps'
 import {Marker} from 'react-native-maps'
+import StaticMap from '../components/staticmap'
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
 import { Block, Text, theme } from 'galio-framework';
 import { AreaChart, Grid } from 'react-native-svg-charts'
@@ -13,44 +14,35 @@ import { argonTheme } from '../constants';
 
 
 class MapCard extends React.Component {
-
+    
     constructor(props) {
         super(props);
-        this.state = { data: [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80] };
-    }
-
-    componentDidMount() {
-        this.interval = setInterval(() => this.setState({ data: [50, 35, 53, -53, 24, 50, -20, -80, 10, 40, 95, -4, -24, 85, 91] }), 5000);
-
-    }
-    componentWillUnmount() {
-        clearInterval(this.interval)
-    }
-    getInitialState() {
-        return {
+        this.state = {
             region: {
-                latitude: 37.78825,
-                longitude: -122.4324,
+                latitude: 12.891854,
+                longitude: 77.585204,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
-            },
-        };
-    }
-    onRegionChange(region) {
-        this.setState({ region : region });
-    }
-    onRegionChangeComplete(region){
-        console.log(this)
-        console.log(this.setState)
-
-        this.setState({ region:region });
-        
+            } };
     }
 
-    render() {
+    // componentDidMount() {
+    //     this.state={
+    //         region: {
+    //             latitude: 37.78825,
+    //             longitude: -122.4324,
+    //             latitudeDelta: 0.0922,
+    //             longitudeDelta: 0.0421,
+    //         }
 
-        const data = [50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24, 50, -20, -80]
-        const data2 = [50, 35, 53, -53, 24, 50, -20, -80, 10, 40, 95, -4, -24, 85, 91]
+    //     }
+
+    // }
+    componentWillUnmount() {
+        // clearInterval(this.interval)
+    }
+
+    render(props) {
 
 
         const { navigation, item, horizontal, full, style, ctaColor, imageStyle } = this.props;
@@ -79,23 +71,21 @@ class MapCard extends React.Component {
                         {/* <Image source={{ uri: item.image }} style={imageStyles} /> */}
 
                         <MapView
-                            style = {styles.MapViewStyle}
-                            region={this.state.region}
-                            onRegionChange={this.onRegionChange}
-                            onRegionChangeComplete = {this.onRegionChangeComplete}
-                            zoomEnabled = {true}
-                            zoomControlEnabled = {true}
-                            loadingEnabled = {true}
+                        provider={this.props.provider}
+                        style={styles.MapViewStyle}
+                        scrollEnabled={false}
+                        zoomEnabled={false}
+                        pitchEnabled={false}
+                        rotateEnabled={false}
+                        initialRegion={this.state.region}
 
                         >
                         <Marker
-                                coordinate={{
-                                    latitude: 37.78825,
-                                    longitude: -122.4324,
-                                }}
-                                title = {"patient"}
-                                >
-                        </Marker>
+                            title="This is a title"
+                            description="This is a description"
+                            coordinate={this.state.region}
+                                />
+                        
                         </MapView>
                     </Block>
                 {/* </TouchableWithoutFeedback> */}
