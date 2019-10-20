@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Dimensions, ScrollView,Linking, Platform } from 'react-native';
 import { Block, theme, Text } from 'galio-framework';
 import Button from '../components/Button'
+import Pulse from '../components/pulse'
+import { Icon } from 'galio-framework';
+
 import { Card } from '../components';
 import call from 'react-native-phone-call';
 
@@ -28,6 +31,7 @@ class Home extends React.Component {
           </Block> */}
           {/* <Card item={articles[0]} full />
           <Card item={articles[0]} full /> */}
+          <Pulse></Pulse>
           <Button
           color = {"error"}
           radius ={3}
