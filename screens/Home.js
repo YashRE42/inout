@@ -23,7 +23,7 @@ class Home extends React.Component {
         contentContainerStyle={styles.articles}>
         <Block flex>
           <MapCard item={articles[0]} full />
-
+          <Card item = {articles[0]} full/>
           <Gcard item={articles[0]} full  />
           {/* <Block flex row>
             <Card item={articles[0]} style={{ marginRight: theme.SIZES.BASE }} />

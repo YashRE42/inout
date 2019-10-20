@@ -19,8 +19,8 @@ class MapCard extends React.Component {
         super(props);
         this.state = {
             region: {
-                latitude: 37.78825,
-                longitude: -122.4324,
+                latitude: 12.891854,
+                longitude: 77.585204,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
             } };
