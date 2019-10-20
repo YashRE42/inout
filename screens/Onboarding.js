@@ -16,8 +16,9 @@ import Images from "../constants/Images";
 class Onboarding extends React.Component {
   render() {
     const { navigation } = this.props;
-
+    navigation.navigate("Home")
     return (
+      
       <Block flex style={styles.container}>
         <StatusBar hidden />
         <Block flex center>
